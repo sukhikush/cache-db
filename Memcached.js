@@ -110,6 +110,7 @@ function getAllKeys() {
         var t;
         console.log("Set Start");
         t = await m_set("sukh", "Sukhdev");
+        await memcached.expire('stateCity', (5 * 60 * 60)) //setting expiry
         console.log("Done data set", t)
         t = await m_get("sukh");
         console.log("Set END", t);
